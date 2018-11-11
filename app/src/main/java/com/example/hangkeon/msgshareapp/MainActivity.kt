@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
             //Code
             Log.i("MainActivity", "Button was clicked !")
 
-            //Toast.makeText(this,"Button was clicked",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,"Button was clicked",Toast.LENGTH_SHORT).show()
         }
 
         btnSendMsgToNextActivity.setOnClickListener()
@@ -27,6 +27,9 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 
             val intent = Intent(this,SecondActivity::class.java)
+
+            intent.putExtra("user_message",message)
+
             startActivity(intent)
         }
     }
